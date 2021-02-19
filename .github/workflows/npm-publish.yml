@@ -1,0 +1,50 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: '@deepnatural/annotation-ui-next'
+
+on:
+  push:
+    branches:
+      - release
+      - dev
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - 'feature/*'
+      - 'error/*'
+      - 'hotfix/*'
+      - 'test/*'
+      - 'docs/*'
+
+jobs:
+  build:
+    name: Test Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 15
+      - run: yarn install
+      - run: yarn lint
+      - run: yarn test
+
+  publish:
+    if: github.event_name == 'push' && contains(github.ref, 'tags/v')
+    name: Publish Package
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 15
+          registry-url: https://npm.pkg.github.com/
+          scope: '@deepnatural'
+      - run: yarn install
+      - run: yarn build
+      - run: npm publish --//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

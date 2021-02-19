@@ -1,0 +1,86 @@
+{
+  "name": "@toaonly/vue-simple-table",
+  "version": "0.0.1",
+  "description": "@toaonly/vue-simple-table",
+  "main": "dist/tvst.umd.js",
+  "scripts": {
+    "start": "webpack --config=webpack/base.js --mode=production --watch",
+    "build": "webpack --config=webpack/base.js --mode=production",
+    "build:dev": "webpack --config=webpack/base.js --mode=development",
+    "lint": "eslint ./src --ext .vue,.ts,.tsx",
+    "lint:fix": "eslint --fix ./src --ext .vue,.ts,.tsx",
+    "test": "jest"
+  },
+  "types": "./index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "vue",
+    "table",
+    "simple-table"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toaonly/vue-simple-table.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toaonly/vue-simple-table/issues"
+  },
+  "author": "toaonly",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/lodash.debounce": "^4.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.8.0",
+    "@typescript-eslint/parser": "^4.8.0",
+    "@vue/babel-plugin-jsx": "^1.0.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vue/runtime-dom": "^3.0.5",
+    "@vue/test-utils": "^2.0.0-beta.12",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.1",
+    "cache-loader": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.13.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-vue": "^7.1.0",
+    "file-loader": "^6.2.0",
+    "hash-sum": "^2.0.0",
+    "jest": "^26.6.3",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
+    "mini-svg-data-uri": "^1.2.3",
+    "postcss": "^8.2.6",
+    "postcss-loader": "^5.0.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.0.3",
+    "terser-webpack-plugin": "^5.0.3",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.0.5",
+    "url-loader": "^4.1.1",
+    "vue-jest": "^5.0.0-alpha.7",
+    "vue-loader": "^16.1.2",
+    "vue-style-loader": "^4.1.2",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "rxjs": "^6.6.3"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.5"
+  }
+}

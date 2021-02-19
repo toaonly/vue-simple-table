@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/vue3-essential",
+    "eslint:recommended",
+    "@vue/typescript"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "ignorePatterns": ["/node_modules/**/*.js", "**/*.js", "/src/**/*.scss"],
+  "rules": {
+    // js rules
+    "no-debugger": "off",
+    "camelcase": ["error", { "properties": "never" }],
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "max-len": [
+      "warn", {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "max-depth": ["warn", 4],
+
+    // ts rules
+    "@typescript-eslint/no-explicit-any": "off",
+
+    // vue rules
+    "vue/no-v-html": "off"
+  }
+}
