@@ -29,6 +29,7 @@
       }
     ],
     "max-depth": ["warn", 4],
+    "indent": ["error", 2],
 
     // ts rules
     "@typescript-eslint/no-explicit-any": "off",
